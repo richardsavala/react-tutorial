@@ -1,30 +1,45 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-// JSX rules
-// return single element
-// div / section / article / or Fragment
-// use camelCase for html attribute
-// className instead of class
-// close every element
-// formatting
-// stateless functional component
-// always return JSX
+// CSS
+import "./index.css";
 
-function Greeting() {
+function BookList() {
   return (
-    <div>
-      <h1>hello world</h1>
-    </div>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-// const Greeting = () => {
-//   return React.createElement(
-//     "h1",
-//     {},
-//     React.createElement("h1", {}, "hello world")
-//   );
-// };
+const Book = () => {
+  return (
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+const Image = () => {
+  return (
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/I/81PcDomicZL._UX300__PJprime-reading,TopRight,0,-50__BG0,0,0,0_FMpng_AC_UL200_SR200,200_.jpg"
+      alt=""
+    />
+  );
+};
+
+const Title = () => <h1>The Giving Tree</h1>;
+const Author = () => <h4>Shel Silverstein</h4>;
+
+ReactDom.render(<BookList />, document.getElementById("root"));
