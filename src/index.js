@@ -22,7 +22,7 @@ function BookList() {
 
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <Image />
       <Title />
       <Author />
@@ -40,6 +40,10 @@ const Image = () => {
 };
 
 const Title = () => <h1>The Giving Tree</h1>;
-const Author = () => <h4>Shel Silverstein</h4>;
+const Author = () => (
+  <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+    Shel Silverstein
+  </h4>
+);
 
 ReactDom.render(<BookList />, document.getElementById("root"));
